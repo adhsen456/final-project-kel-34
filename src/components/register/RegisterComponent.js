@@ -1,9 +1,13 @@
-import React, { useState } from "react";
-import { CardBodyContent, Content, Required, Title } from "./RegisterStyled";
+import React, { useEffect, useState } from "react";
+import { Content, Title } from "./RegisterStyled";
 import { Link } from "react-router-dom";
+import { FaChevronRight } from "react-icons/fa";
 const imgLogo = require("../../assets/images/login_logo.png");
 
 const RegisterComponent = () => {
+  useEffect(() => {
+    document.title = "Register Page";
+  }, []);
   return (
     <Content>
       <div className="container">
@@ -22,7 +26,7 @@ const RegisterComponent = () => {
                   </Title>
                 </div>
               </div>
-              <div className="card-body">
+              <div className="card-body" style={{ margin: "24px" }}>
                 <p>
                   Untuk mendapatkan akun siswa, masukkan kombinasi{" "}
                   <strong>NISN, NPSN, dan Tanggal Lahir</strong>.
@@ -35,6 +39,17 @@ const RegisterComponent = () => {
 
                 <form>
                   <form>
+                    <div className="form-group my-3">
+                      <label>
+                        Nama Lengkap
+                        <span className="text-danger">*</span>
+                      </label>
+                      <input
+                        placeholder="Nama Lengkap"
+                        type={"text"}
+                        className="form-control"
+                      />
+                    </div>
                     <div className="form-group my-3">
                       <label>
                         NISN
@@ -68,20 +83,17 @@ const RegisterComponent = () => {
                         className="form-control"
                       />
                     </div>
-                    <div className="d-flex justify-content-between">
-                      <Link to="/login" className="btn btn-danger w-25">
-                        Kembali
-                      </Link>
+                    <div className="d-flex justify-content-between align-items-baseline">
+                      <p>
+                        Sudah memiliki akun?
+                        <Link to="/login" style={{ textDecoration: "none" }}>
+                          &nbsp;Login
+                        </Link>
+                      </p>
                       <button className="btn btn-primary w-25">
-                        Selanjutnya
+                        Selanjutnya <FaChevronRight />
                       </button>
                     </div>
-                    <p>
-                      Sudah memiliki akun?
-                      <Link to="/login" style={{ textDecoration: "none" }}>
-                        &nbsp;Login
-                      </Link>
-                    </p>
                   </form>
                 </form>
               </div>

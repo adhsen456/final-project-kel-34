@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../dashboard-components/Header";
 import "./verifikasi.css";
+import { Link } from "react-router-dom";
 
 function VerifikasiDataComponent() {
   return (
@@ -243,9 +244,13 @@ function VerifikasiDataComponent() {
               </table>
               </div>
         </div>
+        <Link
+          to="/verifikasi-foto"
+        >
         <div class="d-grid gap-2 d-md-flex justify-content-md-end spacing">
           <button class="btn btn-primary me-md-2" type="button">Selanjutnya</button>
         </div>
+        </Link>
       </div>
 
     </div>
